@@ -1,43 +1,58 @@
 export default function InstagramFeed() {
-    // Placeholders for instagram images
     const images = [
-        "bg-blue-100",
-        "bg-sky-200",
-        "bg-indigo-100",
-        "bg-blue-50",
-        "bg-slate-100",
-        "bg-sky-50",
+        { src: "/assets/travel-bali.png", label: "Bali Escapes" },
+        { src: "/assets/travel-paris.png", label: "Parisian Dreams" },
+        { src: "/assets/travel-mountains.png", label: "Swiss Alps" },
+        { src: "/assets/travel-bali.png", label: "Tropical Bliss" }, // Repeats for carousel effect
+        { src: "/assets/travel-paris.png", label: "City Lights" },
     ];
 
     return (
-        <section className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-deep-navy font-display mb-2">
-                        Travel Stories
+        <section className="py-20 bg-white overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex items-end justify-between">
+                <div>
+                    <h2 className="text-4xl font-bold text-brand-black font-display mb-2">
+                        Captured Moments
                     </h2>
-                    <a
-                        href="https://instagram.com/destination__anywhere"
-                        target="_blank"
-                        className="text-sunset-orange font-medium hover:underline"
-                    >
-                        @destination__anywhere
-                    </a>
+                    <p className="text-gray-500">Follow our journey @destination__anywhere</p>
                 </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                    {images.map((bgClass, index) => (
-                        <div
-                            key={index}
-                            className={`aspect-square rounded-3xl overflow-hidden hover:scale-105 transition-transform duration-300 shadow-md ${bgClass}`}
-                        >
-                            <div className="w-full h-full flex items-center justify-center text-sky-900/20 font-bold text-2xl">
-                                IG {index + 1}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                <a
+                    href="https://instagram.com/destination__anywhere"
+                    target="_blank"
+                    className="hidden md:block text-high-voltage-orange font-bold hover:underline"
+                >
+                    View Instagram →
+                </a>
             </div>
+
+            {/* Horizontal Scroll Container (Hide Scrollbar) */}
+            <div className="flex overflow-x-auto gap-6 px-4 pb-8 -mx-4 md:px-0 md:mx-auto noscrollbar snap-x">
+                {images.map((img, index) => (
+                    <div
+                        key={index}
+                        className="min-w-[300px] h-[400px] rounded-3xl overflow-hidden shadow-lg relative flex-shrink-0 snap-center group"
+                    >
+                        <img
+                            src={img.src}
+                            alt={img.label}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                            <span className="text-white font-bold text-lg">{img.label}</span>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <style jsx>{`
+        .noscrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .noscrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
         </section>
     );
 }
