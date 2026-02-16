@@ -23,29 +23,29 @@ export default function ContactForm() {
     };
 
     return (
-        <section id="contact" className="py-24 bg-slate-blue text-white relative border-t border-white/5">
+        <section id="contact" className="py-48 bg-slate-blue text-white relative border-t border-white/5">
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
-                    {/* Contact Details (Left) */}
-                    <div>
-                        <h2 className="text-5xl md:text-6xl font-black font-display mb-10 tracking-tight leading-none">
+                    {/* Contact Details (Left Aligned) */}
+                    <div className="text-left">
+                        <h2 className="text-5xl md:text-6xl font-black font-display mb-12 tracking-tight leading-none text-left">
                             READY FOR <br /> TAKEOFF?
                         </h2>
 
-                        <div className="space-y-8">
-                            <div className="flex flex-col gap-1">
+                        <div className="space-y-10">
+                            <div className="flex flex-col gap-1 text-left">
                                 <h4 className="font-bold text-gray-400 text-sm uppercase tracking-wider">Call Us</h4>
                                 <p className="text-2xl font-medium tracking-tight">+91 85110 71506</p>
                             </div>
 
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col gap-1 text-left">
                                 <h4 className="font-bold text-gray-400 text-sm uppercase tracking-wider">Email Us</h4>
                                 <p className="text-2xl font-medium tracking-tight">destinationanywhereo@gmail.com</p>
                             </div>
 
-                            <div className="flex flex-col gap-1">
+                            <div className="flex flex-col gap-1 text-left">
                                 <h4 className="font-bold text-gray-400 text-sm uppercase tracking-wider">Visit HQ</h4>
                                 <p className="text-xl font-medium text-gray-300 max-w-xs leading-relaxed">
                                     Shop-106, Shayona Tilak-1 Complex, <br />New SG Road, Gota, Ahmedabad.
@@ -55,10 +55,10 @@ export default function ContactForm() {
                     </div>
 
                     {/* Form Card (Right Aligned) */}
-                    <div className="bg-white p-8 md:p-10 rounded-3xl shadow-2xl text-brand-black w-full max-w-lg ml-auto">
-                        <h3 className="text-2xl font-bold mb-8">Start Your Inquiry</h3>
+                    <div className="bg-white p-10 rounded-3xl shadow-2xl text-brand-black w-full max-w-lg ml-auto">
+                        <h3 className="text-2xl font-bold mb-8 text-left">Start Your Inquiry</h3>
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-                            <div className="space-y-2">
+                            <div className="space-y-2 text-left">
                                 <input
                                     {...register("name", { required: "Name is required" })}
                                     className="w-full px-6 py-4 bg-light-gray rounded-full text-brand-black focus:outline-none focus:ring-2 focus:ring-high-voltage-orange focus:bg-white transition-all font-medium placeholder-gray-400"
@@ -71,7 +71,7 @@ export default function ContactForm() {
                                 )}
                             </div>
 
-                            <div className="space-y-2">
+                            <div className="space-y-2 text-left">
                                 <input
                                     {...register("destination", {
                                         required: "Destination is required",
@@ -86,7 +86,7 @@ export default function ContactForm() {
                                 )}
                             </div>
 
-                            <div className="space-y-2">
+                            <div className="space-y-2 text-left">
                                 <input
                                     {...register("date", { required: "Date is required" })}
                                     className="w-full px-6 py-4 bg-light-gray rounded-full text-brand-black focus:outline-none focus:ring-2 focus:ring-high-voltage-orange focus:bg-white transition-all font-medium placeholder-gray-400"
