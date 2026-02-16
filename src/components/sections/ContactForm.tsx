@@ -101,7 +101,7 @@ export default function ContactForm() {
 
                             <button
                                 type="submit"
-                                className="w-full py-4 bg-high-voltage-orange hover:bg-orange-600 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-orange-500/30 flex items-center justify-center gap-2 mt-4 cursor-pointer"
+                                className="w-full py-4 bg-high-voltage-orange hover:bg-orange-600 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-orange-500/30 flex items-center justify-center gap-2 mt-4 cursor-pointer animate-pulse hover:animate-none"
                             >
                                 <span>Proceed to WhatsApp</span>
                                 <ArrowRight className="w-5 h-5" />
