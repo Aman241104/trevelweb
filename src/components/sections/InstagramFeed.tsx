@@ -1,3 +1,5 @@
+"use client";
+
 export default function InstagramFeed() {
     const images = [
         { src: "/assets/travel-bali.png", label: "Bali Escapes" },
